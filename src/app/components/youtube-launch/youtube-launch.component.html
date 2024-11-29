@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Youtube Video</h1>
+<mat-dialog-content style="width: 100%;">
+  <youtube-player 
+    videoId="{{data}}" 
+    [playerVars]="playerConfig">
+</youtube-player>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,52 @@
+<!-- <div class="container">
+    @for (data of payloadData; track data.id) {
+    <div class="title" style="display: center;">
+      <h1>{{ data.payload_id }}</h1>
+    </div>
+    
+    <div class="data">
+        <p>Payload Id : {{data.payload_id}}</p>
+        <p>Payload nationality : {{data.nationality}}</p>
+        <p>Payload manufacturer : {{data.manufacturer}}</p>
+        <p>Payload payload_type : {{data.payload_type}}</p>  
+    </div>
+    }
+  
+  </div>
+   -->
+@for (data of payloadData; track data.id) {
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{data.payload_id}} </mat-panel-title>
+        <!-- <mat-panel-description> This is a summary of the content </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <p>Nationality : {{data.nationality}}</p>
+      <p>manufacturer : {{data.manufacturer}}</p>
+      <p>Payload Mass in Kg : {{data.payload_mass_kg}}</p>
+      <p>Payload Mass in Lbs: {{data.payload_mass_lbs}}</p>
+      <p>Orbit : {{data.orbit}}</p>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Orbit Params </mat-panel-title>
+            <mat-panel-description> This is a Orbit Parameter Content </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>Reference System : {{data.orbit_params.reference_system || 'Null'}}</p>
+          <p>Regime : {{data.orbit_params.regime || 'Null'}}</p>
+          <p>Longitude : {{data.orbit_params.longitude || 'Null'}}</p>  
+          <p>semi_major_axis_km : {{data.orbit_params.semi_major_axis_km || 'Null'}}</p>  
+          <p>eccentricity : {{data.orbit_params.eccentricity || 'Null'}}</p> 
+          <p>periapsis_km : {{data.orbit_params.periapsis_km || 'Null'}}</p>  
+          <p>apoapsis_km : {{data.orbit_params.apoapsis_km || 'Null'}}</p>  
+          <p>inclination_deg : {{data.orbit_params.inclination_deg || 'Null'}}</p>  
+          <p>period_min : {{data.orbit_params.period_min || 'Null'}}</p>  
+          <p>lifespan_years : {{data.orbit_params.lifespan_years || 'Null'}}</p>  
+          <p>epoch : {{data.orbit_params.epoch || 'Null'}}</p>  
+          <p>mean_motion : {{data.orbit_params.mean_motion || 'Null'}}</p>  
+          <p>raan : {{data.orbit_params.raan || 'Null'}}</p>  
+          <p>arg_of_pericenter : {{data.orbit_params.arg_of_pericenter || 'Null'}}</p>  
+          <p>mean_anomaly : {{data.orbit_params.mean_anomaly || 'Null'}}</p>  
+        </mat-expansion-panel>
+    </mat-expansion-panel>
+  </mat-accordion>
+}

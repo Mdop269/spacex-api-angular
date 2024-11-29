@@ -1,0 +1,43 @@
+@for (data of rocketData; track data.id) {
+  <div class="container">
+    <mat-card appearance="outlined">
+      <mat-card-header class="title_center">
+        <mat-card-title > {{ data.rocket_name }}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+    <br>
+    <mat-card class="example-card"  appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ data.rocket_name  }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{data.flickr_images[0]}}" alt="Sorry We dont have">
+      <mat-card-content>{{ data.description }}</mat-card-content>
+      <mat-card-actions align="end">
+        <a (click)="goToLink(data.wikipedia)">
+          <button mat-button >Learn More</button>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card"  appearance="outlined">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ data.company  }}</mat-card-title>
+        <mat-card-subtitle>{{ data.country }} </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{data.flickr_images[1]}}" alt="Sorry We dont have">
+      <br>
+      <br>
+      <mat-card-content>Cost per launch : {{ data.cost_per_launch}}</mat-card-content>
+      <mat-card-content>Sucess rate %: {{ data.success_rate_pct}}</mat-card-content>
+      <mat-card-content>first flight : {{ data.first_flight}}</mat-card-content>
+
+      <mat-card-actions align="end">
+        <a (click)="goToLink(data.wikipedia)">
+          <button mat-button >Learn More</button>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+}  
